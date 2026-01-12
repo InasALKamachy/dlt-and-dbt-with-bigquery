@@ -1,23 +1,26 @@
-name: jaffle_shop
+name: fortnox_analytics
+version: '1.0.0'
+config-version: 2
 
-profile: jaffle_shop
+# Use the fortnox_transform profile from profiles.yml
+profile: fortnox_transform
 
-seed-paths: ["seeds"]
 model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
 macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
 clean-targets:
   - "target"
   - "dbt_packages"
 
-seeds:
-  # Builds seeds into '<your_schema_name>_raw'
-  jaffle_shop:
-    +schema: raw
-
 models:
-  jaffle_shop:
-    # Materialize staging models as views, and marts as tables
+  fortnox_analytics:
     staging:
       +materialized: view
+      +schema: staging
     marts:
       +materialized: table
+      +schema: marts

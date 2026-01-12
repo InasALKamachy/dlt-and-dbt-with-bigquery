@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: fortnox_raw
+    database: inas-sandbox-project
+    schema: fortnox_data
+    tables:
+      - name: accounts
+      - name: assets_types
